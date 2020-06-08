@@ -98,7 +98,21 @@ const firebaseConfig = {
     });
 
 
-
+//create data
+// Add a new document in collection "cities"
+db.collection("cities").doc("LA").set({
+    name: "Los Angeles",
+    state: "CA",
+    country: "USA"
+})
+.then(function() {
+    console.log("Document successfully written!");
+    document.getElementById("firechat-wrapper").innerHTML="Document successfully written!";
+})
+.catch(function(error) {
+    console.error("Error writing document: ", error);
+    document.getElementById("firechat-wrapper").innerHTML="Error writing document: " + error;
+});
 
     </script>
 
